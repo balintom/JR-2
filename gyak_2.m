@@ -379,6 +379,8 @@ plot(t,g,...
 
 hold off
 
+% ---------------------------------------------------------------------------------------------------
+% 3. gyakorlat anyaga
 
 %% Két négyszögjel időtartománybeli konvolúciója
 
@@ -555,87 +557,3 @@ plot(t,j,...
     'Color',[0.0,0.0,0.0]);
 %}
 hold off
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% Időtartománybeli szorzás
-
-A = 1;
-T = 1;
-tau = T/2;
-w_0 = 2*pi/T;
-w = w_0*(1 : 1000);
-
-Fp = zeros([length(w),1]);
-Fn = zeros([length(w),1]);
-F0 = 0.5;
-
-for p = 1 : length(w)
-    Fp(p) = 2*A^2*(tau/T)^2*exp(-1i*w(p)*tau/2*2)*(sin(w(p)*tau/2)/(w(p)*tau/2))^2;
-    Fn(p) = 2*A^2*(tau/T)^2*exp(-1i*(-w(p))*tau/2*2)*(sin(-w(p)*tau/2)/(-w(p)*tau/2))^2;
-end
-
-for p = 1 : length(w)
-    for q = 1 : length(w)
-        Gp(p,q) = A/T * ( exp(-1i*(p-q)*w_0*T/2) -1 )/(-1i*(p-q)*w_0*T/2);
-        Gp(p,q) = A/T * ( exp(-1i*(p-q)*w_0*T/2) -1 )/(-1i*(p-q)*w_0*T/2);
-    end
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
