@@ -239,6 +239,7 @@ hold off
 
 T = 1;
 w = 2*pi/T;
+% idő
 t = -1*T : 0.01*T : 1*T;
 
 
@@ -270,6 +271,7 @@ plot(t,y,...
     'LineWidth',3,...
     'Color',[0.0,0.0,1.0]);
 hold off
+
 
 
 
